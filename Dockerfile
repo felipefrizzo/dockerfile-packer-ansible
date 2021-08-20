@@ -23,4 +23,6 @@ COPY --from=ansible /usr/local/bin /usr/local/bin
 COPY --from=ansible /usr/local/lib /usr/local/lib
 COPY --from=packer /usr/bin/packer /usr/bin/packer
 
+RUN apk add --update --no-cache openssh
+
 ENTRYPOINT [ "packer" ]
